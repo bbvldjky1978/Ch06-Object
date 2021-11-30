@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/android-work/Ch06Object/0600_RelativeLayout/src/main/res/layout/m0600.xml" value="0.33" />
+        <entry key="..\:/android-work/Ch06Object/0601_RelativeLayout_Game/src/main/res/layout/m0601.xml" value="0.25" />
+        <entry key="..\:/android-work/Ch06Object/0601a_Game_textcolor/src/main/res/layout/m0601.xml" value="0.26495726495726496" />
+        <entry key="..\:/android-work/Ch06Object/0602_ImageButton/src/main/res/layout/m0602.xml" value="0.25" />
+        <entry key="..\:/android-work/Ch06Object/0602_ImageButtona/src/main/res/layout/m0601.xml" value="0.26495726495726496" />
+        <entry key="..\:/android-work/Ch06Object/0602_ImageButtona/src/main/res/layout/m0602a.xml" value="0.26495726495726496" />
+        <entry key="..\:/android-work/Ch06Object/0603_Game_music/src/main/res/layout/m0602.xml" value="0.26495726495726496" />
+        <entry key="..\:/android-work/Ch06Object/0603_Game_music/src/main/res/layout/m0603.xml" value="0.25" />
+        <entry key="..\:/android-work/Ch06Object/0604_Toast_Type/src/main/res/layout/custom.xml" value="0.25" />
+        <entry key="..\:/android-work/Ch06Object/0604_Toast_Type/src/main/res/layout/m0604.xml" value="0.26495726495726496" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

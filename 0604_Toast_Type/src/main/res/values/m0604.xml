@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="m0604_b001">默認TOAST位置</string>
+    <string name="m0604_b002">自定義顯示位置</string>
+    <string name="m0604_b003">帶圖片</string>
+    <string name="m0604_b004">完全自定義</string>
+    <string name="m0604_t010">上課請不要玩手機</string>
+</resources>
