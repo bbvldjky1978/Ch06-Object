@@ -1,7 +1,5 @@
 package tw.tcnr08.m0609;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -13,11 +11,14 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-public class Menu01 extends AppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class Menu02 extends AppCompatActivity {
 
     private TextView myname;
     private TextView tv;
-    private Intent intent01 = new Intent() ;
+    private Intent intent02 = new Intent();
+    private String mode_title;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +30,8 @@ public class Menu01 extends AppCompatActivity {
 
     private void setupviewcompnent() {
         LinearLayout mlay02 = (LinearLayout) findViewById(R.id.lay02);
+        intent02 = this.getIntent();
+
 
         //-----------------------------------------------------
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
@@ -68,8 +71,14 @@ public class Menu01 extends AppCompatActivity {
         objt001.setVisibility(View.GONE); // 設定參考物件隱藏不佔空間
         // ----
 
+        // 設定class標題
+        mode_title = intent02.getStringExtra("subname");
+        this.setTitle(this.getResources().getIdentifier(mode_title, "string", getPackageName()));
+
+
+
         try {
-            for (int i = 5; i <= 20; i++) {// 設定走20圈, 遇到沒資料自動停止.
+            for (int i = 1; i <= 20; i++) {// 設定走20圈, 遇到沒資料自動停止.
                 tv = new TextView(this); // tv 繼承TextView
                 tv.setId(i); // 寫入配置碼ID 代號
                 // %02d執行十進制整數轉換d，格式化補零，寬度為2。 因此，一個int參數，它的值是7
@@ -77,7 +86,7 @@ public class Menu01 extends AppCompatActivity {
                 String microNo = String.format("%02d", i);
 //                Log.d(TAG,             microNo                );
                 // 取得string 裏頭相對應的ID 碼
-                int id = getResources().getIdentifier("m" + microNo, "string", getPackageName());
+                int id = getResources().getIdentifier(mode_title + microNo, "string", getPackageName());
                 // --------------------------------------------
                 if (id == 0) {
                     break; // 假如 getIdentifier 找不到滿足資料, 會傳回 0 , 所以中斷迴圈
@@ -97,16 +106,9 @@ public class Menu01 extends AppCompatActivity {
                 mlay02.addView(tv);// 顯示textview物件
 
                 tv.setOnClickListener(clkOn);
-
-
-
-
-
-
             }
         }catch (Exception e){
             return;
-
             }
 
         }
@@ -116,17 +118,12 @@ public class Menu01 extends AppCompatActivity {
                 int ii = (v.getId()); // 下層巨集前兩碼
                 String mm = String.format("%02d", ii);
                 String subname = "m" + mm;
-
                 // ------------------------------------------
-//            Log.d(TAG, "subname:"+subname);
-//            intent01.putExtra("sel", ii);
-                intent01.putExtra("subname", subname); // subname => m05,m06,m07....m17
-                intent01.setClass(Menu01.this, Menu02.class);
-                startActivity(intent01);
+                intent02.putExtra("subname", subname); // subname => m05,m06,m07....m17
+                intent02.setClass(Menu02.this, Menu03.class);
+                startActivity(intent02);
             }
         };
-
-
 
 
     @Override
@@ -135,9 +132,6 @@ public class Menu01 extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.m0609, menu);
         return true;
     }
-
-
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -148,6 +142,7 @@ public class Menu01 extends AppCompatActivity {
 
         switch (item.getItemId()){
             case R.id.m_about:
+
                 break;
             case R.id.action_settings:
                 this.finish();
@@ -166,18 +161,13 @@ public class Menu01 extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
 
-
-
-//
-//
 //        int ii = (v.getId()); // 下層巨集前兩碼
 //        String mm = String.format("%02d", ii);
 //        String subname = "m" + mm;
 //
-//        intent01.putExtra("subname1", getString(R.string.m0502));
-//        intent01.setClass(Menu01.this, Menu02.class);
-//        startActivity(intent01);
-
+//        intent02.putExtra("subname1", getString(R.string.m0000_b0606));
+//        intent02.setClass(Menu02.this, Menu02.class);
+//        startActivity(intent02);
     }
     }
 
