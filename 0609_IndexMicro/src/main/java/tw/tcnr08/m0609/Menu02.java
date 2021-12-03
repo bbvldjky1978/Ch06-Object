@@ -117,7 +117,7 @@ public class Menu02 extends AppCompatActivity {
             public void onClick(View v) {
                 int ii = (v.getId()); // 下層巨集前兩碼
                 String mm = String.format("%02d", ii);
-                String subname = "m" + mm;
+                String subname = mode_title + mm;
                 // ------------------------------------------
                 intent02.putExtra("subname", subname); // subname => m05,m06,m07....m17
                 intent02.setClass(Menu02.this, Menu03.class);

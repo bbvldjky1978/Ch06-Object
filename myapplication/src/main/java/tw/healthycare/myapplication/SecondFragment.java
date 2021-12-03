@@ -15,6 +15,9 @@ public class SecondFragment extends Fragment {
 
     private FragmentSecondBinding binding;
 
+
+
+//    ****************************************************************
     @Override
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,
@@ -25,6 +28,7 @@ public class SecondFragment extends Fragment {
         return binding.getRoot();
 
     }
+
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -43,5 +47,5 @@ public class SecondFragment extends Fragment {
         super.onDestroyView();
         binding = null;
     }
-
+//*****************************************************************************************
 }
