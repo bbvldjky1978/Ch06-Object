@@ -11,7 +11,6 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Menu03 extends AppCompatActivity {
@@ -33,6 +32,7 @@ public class Menu03 extends AppCompatActivity {
         LinearLayout mlay02 = (LinearLayout) findViewById(R.id.lay02);
         intent03 = this.getIntent();
 
+
         //-----------------------------------------------------
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
@@ -43,7 +43,7 @@ public class Menu03 extends AppCompatActivity {
         // 動態調整高度 抓取使用裝置尺寸
         DisplayMetrics displayMetrics = new DisplayMetrics();
         this.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-        int newscrollheight = displayMetrics.heightPixels * 80 / 100; // 設定ScrollView使用尺寸的4/5
+        int newscrollheight = displayMetrics.heightPixels * 80/ 100; // 設定ScrollView使用尺寸的4/5
 
 //         String px = displayMetrics.widthPixels + " x " +
 //         displayMetrics.heightPixels;
@@ -72,9 +72,9 @@ public class Menu03 extends AppCompatActivity {
         // ----
 
         // 設定class標題
-        intent03 = this.getIntent();
         mode_title = intent03.getStringExtra("subname");
         this.setTitle(this.getResources().getIdentifier(mode_title, "string", getPackageName()));
+
 
 
         try {
@@ -107,28 +107,23 @@ public class Menu03 extends AppCompatActivity {
 
                 tv.setOnClickListener(clkOn);
             }
-        } catch (Exception e) {
+        }catch (Exception e){
             return;
+            }
+
         }
-
-    }
-
-    private View.OnClickListener clkOn = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-
-//            int ii = (v.getId()); // 下層巨集前兩碼
-//            String mm = String.format("%02d", ii);
-//            String subname = "m" + mm;
-
-            // ------------------------------------------
+        private View.OnClickListener clkOn=new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int ii = (v.getId()); // 下層巨集前兩碼
+                String mm = String.format("%02d", ii);
+                String subname = "m" + mm;
+                // ------------------------------------------
 //                intent02.putExtra("subname", subname); // subname => m05,m06,m07....m17
-//                intent02.setClass(Menu02.this, Menu03.class);
+//                intent02.setClass(Menu02.this, Menu02.class);
 //                startActivity(intent02);
-
-
-        }
-    };
+            }
+        };
 
 
     @Override
@@ -139,13 +134,13 @@ public class Menu03 extends AppCompatActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+    public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        switch (item.getItemId()) {
+        switch (item.getItemId()){
             case R.id.m_about:
 
                 break;
@@ -154,7 +149,25 @@ public class Menu03 extends AppCompatActivity {
                 break;
 
         }
+
+//        ---------------------
+
+        //noinspection SimplifiableIfStatement
+//        if (id == R.id.action_settings) {
+//            this.finish();
+//
+//            return true;
+//        }
+
         return super.onOptionsItemSelected(item);
+
+//        int ii = (v.getId()); // 下層巨集前兩碼
+//        String mm = String.format("%02d", ii);
+//        String subname = "m" + mm;
+//
+//        intent02.putExtra("subname1", getString(R.string.m0000_b0606));
+//        intent02.setClass(Menu02.this, Menu02.class);
+//        startActivity(intent02);
     }
-}
+    }
 
